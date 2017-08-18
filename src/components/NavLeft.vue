@@ -12,7 +12,7 @@
                         <router-link :to="{path:'echart_01'}">echarts</router-link>
                     </el-menu-item>
                     <el-menu-item index="1-2">
-                        highcharts
+                        <router-link :to="{path:'highcharts_01'}">highcharts</router-link>
                     </el-menu-item>
                     <el-menu-item index="1-3">
                         D3
