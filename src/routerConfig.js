@@ -8,6 +8,11 @@ import Highcharts_01 from './components/Highcharts/Highcharts_01.vue'
 import Highcharts_02 from './components/Highcharts/Highcharts_02.vue'
 import Highcharts_03 from './components/Highcharts/Highcharts_03.vue'
 
+import D3 from './components/D3/D3.vue'
+import D3_01 from './components/D3/D3_01.vue'
+import D3_02 from './components/D3/D3_02.vue'
+import D3_03 from './components/D3/D3_03.vue'
+
 import UserManagement from './components/UserManagement.vue'
 
 export default{
@@ -31,7 +36,16 @@ export default{
                 {path:'/highcharts_03', component:Highcharts_03},
             ]
         },
+        {
+            path:'/d3',
+            component:D3,
+            children:[
+                {path:'/d3_01', component:D3_01},
+                {path:'/d3_02', component:D3_02},
+                {path:'/d3_03', component:D3_03},
+            ]
+        },
         {path:'/userManagement', component:UserManagement},
-        {path:'*', redirect:'/echarts'}
+        {path:'*', redirect:'/echart_01'}
     ]
 }
