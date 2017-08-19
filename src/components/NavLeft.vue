@@ -15,7 +15,17 @@
                         <router-link :to="{path:'highcharts_01'}">highcharts</router-link>
                     </el-menu-item>
                     <el-menu-item index="1-3">
-                        <router-link :to="{path:'D3_01'}">D3</router-link>
+                        <router-link :to="{path:'D3_01'}">
+                            D3
+                            <svg width="72" height="12">
+                                <g id="to-sun">
+                                    <circle fill="crimson" r="6" cx="16" cy="6"/>
+                                    <circle fill="gold" r="6" cx="32" cy="6"/>
+                                    <circle fill="steelblue" r="6" cx="48" cy="6"/>
+                                    <circle fill="yellowgreen" r="6" cx="64" cy="6"/>
+                                </g>
+                            </svg>
+                        </router-link>
                     </el-menu-item>
                 </el-menu-item-group>
                 <el-menu-item-group title="分组2">

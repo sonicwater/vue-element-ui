@@ -8,7 +8,7 @@
                 <router-link :to="{path:'D3_02'}">堆叠区域图</router-link>
             </el-menu-item>
             <el-menu-item index="3">
-                <router-link :to="{path:'D3_03'}">折柱混合</router-link>
+                <router-link :to="{path:'D3_03'}">柱形图</router-link>
             </el-menu-item>
         </el-menu>
         <el-col :span="24" class="echarts_subPane">

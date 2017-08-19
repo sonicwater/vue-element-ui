@@ -1,13 +1,16 @@
 <template>
 	<el-row class="NavHeaderBar">
-  		<el-col :span="6">
-  			<div class="grid-content bg-purple">
-  				<span class="logo">
-					<i class="el-icon-menu"></i> Element
-				</span>
+  		<el-col :span="2">
+  			<div class="grid-content bg-purple logoIcon">
+  				<Logo/>
   			</div>
   		</el-col>
-  		<el-col :span="18">
+  		<el-col :span="10">
+  			<div class="grid-content bg-purple logoText">
+  				<h1>Sonic Porject</h1>
+  			</div>
+  		</el-col>
+  		<el-col :span="12">
   			<div class="grid-content bg-purple">
   				&nbsp;
   			</div>
@@ -15,14 +18,30 @@
 	</el-row>
 </template>
 <script>
+	import Logo from './Logo.vue';
 	export default{
-		//name:'nav'
+		data () {
+	        return {
+	            
+	        }
+	    },
+	    components:{
+	        Logo
+	    }
 	}
 </script>
-<style scope>
-	html,body{
-		margin: 0;padding:0;
-		font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+<style>
+	.grid-content.logoIcon{
+		padding-right: 10px;
+    	text-align: right;
+	}
+	.grid-content.logoText{
+		padding: 16px 0px;
+	}
+	.grid-content h1{
+		font: 32px/48px "microsoft yahei";
+	    margin: 2px;
+	    color: #ddd;
 	}
 	.NavHeaderBar{
 		background: #1D8CE0;
