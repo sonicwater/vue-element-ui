@@ -29,12 +29,12 @@
                     </el-menu-item>
                 </el-menu-item-group>
                 <el-menu-item-group title="绘图">
-                    <el-menu-item index="1-3">
+                    <el-menu-item index="1-4">
                         <router-link :to="{path:'Canvas_01'}">原生HTML5 canvas</router-link></el-menu-item>
                 </el-menu-item-group>
-                <el-submenu index="1-4">
+                <el-submenu index="1-5">
                     <template slot="title">框架</template>
-                    <el-menu-item index="1-4-1">three.js</el-menu-item>
+                    <el-menu-item index="1-5-1">three.js</el-menu-item>
                 </el-submenu>
             </el-submenu>
             <el-menu-item index="2">

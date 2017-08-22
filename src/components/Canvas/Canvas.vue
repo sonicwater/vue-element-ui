@@ -14,7 +14,7 @@
                 <router-link :to="{path:'Canvas_04'}">矩形</router-link>
             </el-menu-item>
             <el-menu-item index="5">
-                <router-link :to="{path:'Canvas_05'}">弧形</router-link>
+                <router-link :to="{path:'Canvas_05'}">饼状图</router-link>
             </el-menu-item>
         </el-menu>
         <el-col :span="24" class="echarts_subPane">
