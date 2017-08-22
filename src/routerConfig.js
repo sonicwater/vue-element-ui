@@ -13,6 +13,13 @@ import D3_01 from './components/D3/D3_01.vue'
 import D3_02 from './components/D3/D3_02.vue'
 import D3_03 from './components/D3/D3_03.vue'
 
+import Canvas from './components/Canvas/Canvas.vue'
+import Canvas_01 from './components/Canvas/Canvas_01.vue'
+import Canvas_02 from './components/Canvas/Canvas_02.vue'
+import Canvas_03 from './components/Canvas/Canvas_03.vue'
+import Canvas_04 from './components/Canvas/Canvas_04.vue'
+import Canvas_05 from './components/Canvas/Canvas_05.vue'
+
 import UserManagement from './components/UserManagement.vue'
 
 export default{
@@ -43,6 +50,17 @@ export default{
                 {path:'/d3_01', component:D3_01},
                 {path:'/d3_02', component:D3_02},
                 {path:'/d3_03', component:D3_03},
+            ]
+        },
+        {
+            path:'/canvas',
+            component:Canvas,
+            children:[
+                {path:'/canvas_01', component:Canvas_01},
+                {path:'/canvas_02', component:Canvas_02},
+                {path:'/canvas_03', component:Canvas_03},
+                {path:'/canvas_04', component:Canvas_04},
+                {path:'/canvas_05', component:Canvas_05},
             ]
         },
         {path:'/userManagement', component:UserManagement},

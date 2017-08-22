@@ -29,7 +29,8 @@
                     </el-menu-item>
                 </el-menu-item-group>
                 <el-menu-item-group title="绘图">
-                    <el-menu-item index="1-3">原生HTML5 canvas</el-menu-item>
+                    <el-menu-item index="1-3">
+                        <router-link :to="{path:'Canvas_01'}">原生HTML5 canvas</router-link></el-menu-item>
                 </el-menu-item-group>
                 <el-submenu index="1-4">
                     <template slot="title">框架</template>
