@@ -10,21 +10,21 @@ export default {
         return {
             data:[
             	{
-					"value": 0.125,
+					"value": 0.16,
 					"color": "crimson",
-					"title": "应届生"
+					"title": "Vue.JS"
 				},{
-					"value": 0.225,
+					"value": 0.22,
 					"color": "gold",
-					"title": "社会招生"
+					"title": "React"
 				},{
-					"value": 0.4112,
+					"value": 0.41,
 					"color": "steelblue",
-					"title": "老学员推荐"
+					"title": "原生Javascript"
 				},{
-					"value": 0.2388,
+					"value": 0.21,
 					"color": "yellowgreen",
-					"title": "公开课"
+					"title": "数据可视化"
 				}
 			]
         }
@@ -63,6 +63,26 @@ export default {
 			// startAngle：开始绘制的弧度
 			// endAngle：结束绘制的弧度！！
 			ctx.arc(x0, y0, radius, startAngle, endAngle);
+
+			//绘制文字：
+			var txt =this.data[i].title + ' ' + this.data[i].value * 100 + '%';
+
+			var x, y;
+			// 计算出文字的要放的角度
+			var txtAngle = tempAngle + 1/2 * angle;
+
+			//计算文字的 坐标
+			x = x0 + Math.cos( txtAngle * Math.PI / 180 ) * (radius + 20); 
+			y = y0 + Math.sin( txtAngle * Math.PI / 180 ) * (radius + 20);
+
+			//如果文字在圆形的左侧，那么让文字 对齐方式为 文字结尾对齐当前坐标。
+			if( txtAngle > 90 && txtAngle < 270 ) {
+				ctx.textAlign = 'end';
+			}
+
+			//把文字绘制到 扇形区域的 旁边
+			ctx.fillText(txt, x, y);
+
 
 			ctx.fill();
 			tempAngle += angle;//下一次绘制的起始角度
