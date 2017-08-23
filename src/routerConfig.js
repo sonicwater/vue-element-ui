@@ -23,7 +23,7 @@ import Canvas_05 from './components/Canvas/Canvas_05.vue'
 import UserManagement from './components/UserManagement.vue'
 
 export default{
-    mode:'history',
+    //mode:'history', //发布到dist后出现路径错误
     routes:[
     	{
             path:'/echarts',
