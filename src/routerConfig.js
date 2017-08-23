@@ -23,7 +23,7 @@ import Canvas_05 from './components/Canvas/Canvas_05.vue'
 import UserManagement from './components/UserManagement.vue'
 
 export default{
-    mode:'history',
+    //mode:'history',
     routes:[
     	{
             path:'/echarts',
