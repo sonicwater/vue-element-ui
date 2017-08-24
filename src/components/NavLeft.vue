@@ -32,15 +32,17 @@
                     <el-menu-item index="1-4">
                         <router-link :to="{path:'Canvas_01'}">原生HTML5 canvas</router-link></el-menu-item>
                 </el-menu-item-group>
+                <!--
                 <el-submenu index="1-5">
                     <template slot="title">框架</template>
                     <el-menu-item index="1-5-1">three.js</el-menu-item>
-                </el-submenu>
+                </el-submenu>-->
             </el-submenu>
             <el-menu-item index="2">
                 <i class="el-icon-menu"></i>
                 <router-link :to="{path:'userManagement'}">用户管理</router-link>
             </el-menu-item>
+            <!--
             <el-menu-item index="3">
                 <i class="el-icon-setting"></i>
                 导航三
@@ -56,7 +58,7 @@
             <el-menu-item index="6">
                 <i class="el-icon-setting"></i>
                 导航三
-            </el-menu-item>
+            </el-menu-item>-->
         </el-menu>
     </el-col>
 </template>
