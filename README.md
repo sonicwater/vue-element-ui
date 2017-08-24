@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
++>    Demo:[https://sonicwater.github.io/vue-element-ui/](https://sonicwater.github.io/vue-element-ui/)
+
 ## Build Setup
 
 ``` bash
