@@ -4,12 +4,13 @@
         	<el-submenu index="1">
                 <template slot="title">
                     <i class="el-icon-message"></i>
-                    数据可视化
+                    数据展示
                 </template>
                 <el-menu-item-group>
+                	<template slot="title">表格</template>
                 	<el-menu-item index="1-1">
-                        <router-link :to="{path:'userManagement'}">
-                        	<i class="el-icon-document"></i>用户管理
+                        <router-link :to="{path:'tableData'}">
+                        	<i class="el-icon-document"></i>表格数据
                         </router-link>
                     </el-menu-item>
                 </el-menu-item-group>
