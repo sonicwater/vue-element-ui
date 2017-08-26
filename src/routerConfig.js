@@ -71,6 +71,6 @@ export default{
                 {path:'/canvas_05', component:Canvas_05},
             ]
         },
-        {path:'*', redirect:'/echart_01'}
+        {path:'*', redirect:'/tableData_01'}
     ]
 }
