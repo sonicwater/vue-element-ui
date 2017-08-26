@@ -1,22 +1,39 @@
 <template>
     <el-col :span="4">
         <el-menu default-active="1-1" class="el-menu-vertical-demo el-menu--dark" @open="handleOpen" @close="handleClose">
-            <el-submenu index="1">
+        	<el-menu-item index="1">
+                <template slot="title">
+                    <i class="el-icon-message"></i>
+                    数据可视化
+                </template>
+                <el-menu-item-group>
+                	<el-menu-item index="1-1">
+                        <router-link :to="{path:'userManagement'}">
+                        	<i class="el-icon-document"></i>用户管理
+                        </router-link>
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-menu-item>
+            <el-submenu index="2">
                 <template slot="title">
                     <i class="el-icon-message"></i>
                     数据可视化
                 </template>
                 <el-menu-item-group>
                     <template slot="title">图表</template>
-                    <el-menu-item index="1-1">
-                        <router-link :to="{path:'echart_01'}">echarts</router-link>
+                    <el-menu-item index="2-1">
+                        <router-link :to="{path:'echart_01'}">
+                        	<i class="el-icon-document"></i>echarts
+                        </router-link>
                     </el-menu-item>
-                    <el-menu-item index="1-2">
-                        <router-link :to="{path:'highcharts_01'}">highcharts</router-link>
+                    <el-menu-item index="2-2">
+                        <router-link :to="{path:'highcharts_01'}">
+                        	<i class="el-icon-document"></i>highcharts
+                        </router-link>
                     </el-menu-item>
-                    <el-menu-item index="1-3">
+                    <el-menu-item index="2-3">
                         <router-link :to="{path:'D3_01'}">
-                            D3
+                            <i class="el-icon-document"></i>D3
                             <svg width="72" height="12">
                                 <g id="to-sun">
                                     <circle fill="crimson" r="6" cx="16" cy="6"/>
@@ -29,8 +46,10 @@
                     </el-menu-item>
                 </el-menu-item-group>
                 <el-menu-item-group title="绘图">
-                    <el-menu-item index="1-4">
-                        <router-link :to="{path:'Canvas_01'}">原生HTML5 canvas</router-link></el-menu-item>
+                    <el-menu-item index="2-4">
+                        <router-link :to="{path:'Canvas_01'}">
+                        	<i class="el-icon-document"></i>原生HTML5 canvas
+                        </router-link></el-menu-item>
                 </el-menu-item-group>
                 <!--
                 <el-submenu index="1-5">
@@ -38,10 +57,7 @@
                     <el-menu-item index="1-5-1">three.js</el-menu-item>
                 </el-submenu>-->
             </el-submenu>
-            <el-menu-item index="2">
-                <i class="el-icon-menu"></i>
-                <router-link :to="{path:'userManagement'}">用户管理</router-link>
-            </el-menu-item>
+            
             <!--
             <el-menu-item index="3">
                 <i class="el-icon-setting"></i>
