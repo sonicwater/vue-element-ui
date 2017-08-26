@@ -20,7 +20,8 @@ import Canvas_03 from './components/Canvas/Canvas_03.vue'
 import Canvas_04 from './components/Canvas/Canvas_04.vue'
 import Canvas_05 from './components/Canvas/Canvas_05.vue'
 
-import TableData from './components/TableData.vue'
+import TableData from './components/TableData/TableData.vue'
+import TableData_01 from './components/TableData/TableData_01.vue'
 
 export default{
     //mode:'history',
