@@ -9,7 +9,7 @@
                 <el-menu-item-group>
                 	<template slot="title">表格</template>
                 	<el-menu-item index="1-1">
-                        <router-link :to="{path:'tableData'}">
+                        <router-link :to="{path:'tableData_01'}">
                         	<i class="el-icon-document"></i>表格数据
                         </router-link>
                     </el-menu-item>

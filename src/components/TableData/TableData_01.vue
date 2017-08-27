@@ -7,46 +7,29 @@
 		    <el-table-column prop="address" label="地址" :formatter="formatter"></el-table-column>
 	  	</el-table>
 	  	<div class="block">
-		  	<el-pagination layout="prev, pager, next" :total='users.total' @size-change="changeSize" current-change='changePage' :current-page='users.currentPage' :page-size='users.pageSize'></el-pagination>
+		  	<el-pagination 
+		  		layout="prev, pager, next" 
+		  		:total='users.total'
+		  		:current-page='users.currentPage' 
+		  		:page-size='users.pageSize'
+		  		@size-change="changeSize" 
+		  		@current-change='changePage' 
+		  	>
+		  	</el-pagination>
+		  	静态数据分页——没什么意义
 		</div>
     </div>
   	
 </template>
 <script>
-
+	const TableData = require('./TableData_01.json');
     export default{
         name:'test',
         data() {
             return {
             	users: {
-			        data: [
-		                {
-				          	date: '2016-05-02',
-				          	name: '王小虎',
-				          	address: '上海市普陀区金沙江路 1518 弄'
-				        }, {
-				          	date: '2016-05-04',
-				          	name: '赵小虎',
-				          	address: '上海市普陀区金沙江路 1517 弄'
-				        }, {
-				          	date: '2016-05-01',
-				          	name: '张小虎',
-				          	address: '上海市普陀区金沙江路 1519 弄'
-				        }, {
-				          	date: '2016-05-03',
-				          	name: '郗小虎',
-				          	address: '上海市普陀区金沙江路 1516 弄'
-				        }, {
-				          	date: '2016-05-05',
-				          	name: '野小虎',
-				          	address: '上海市普陀区金沙江路 1516 弄'
-				        }, {
-				          	date: '2016-05-06',
-				          	name: '单小虎',
-				          	address: '上海市普陀区金沙江路 1516 弄'
-				        }
-			        ],
-			        total: 6,
+			        data: "",
+			        total: 0,
 			        pageSize: 5,
 			        currentPage: 1,
 			        tableLoad: false
@@ -57,15 +40,46 @@
 	      	formatter(row, column) {
 	        	return row.address;
 	      	},
-	      	changePage(pager) {
-		      	this.users.currentPage = pager;
-		      	this.getdata({ page: this.users.currentPage, pagesize: this.users.pageSize })
+	      	getdata(pager) {
+		      	this.users.total = TableData.result.length;
+
+		      	var mod = TableData.result.length % this.users.pageSize;
+		      	var end = 5;
+
+		      	if(pager==Math.ceil(TableData.result.length/this.users.pageSize)){
+		      		end = (pager-1)*this.users.pageSize + mod;
+		      	}else{
+		      		end = this.users.pageSize;
+		      	}
+
+		      	var arr = TableData.result.slice(
+		      		(pager-1)*this.users.pageSize,
+		      		end
+		      		);
+		      	console.log(arr);
+				this.users.data = arr;
 		    },
-	      	changeSize() {
+	      	changePage(pager) { //切换页
+	      		console.log(pager);
+		      	this.users.currentPage = pager;
+		      	this.getdata(pager);
+		    },
+	      	changeSize(size) {
 		      	this.users.currentPage = 1
-		      	this.users.pageSize = 5;
+		      	this.users.pageSize = size;
 		      	this.getdata({ pagesize: this.users.pageSize })
 		    },
+	    },
+	    created(){
+	    	this.getdata(1);
 	    }
     }
 </script>
+<style>
+	.el-pagination {
+        white-space: nowrap;
+    	padding: 0px;
+    	color: #48576a;
+    	margin-top: 20px;
+	}
+</style>

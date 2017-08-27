@@ -31,7 +31,7 @@
 
 <style scoped>
     .tableData_subPane{
-        padding: 40px 10px 10px 10px;
+        padding: 10px 0px 0px 0px;
     }
     .el-menu{
         background: #D3DCE6;
