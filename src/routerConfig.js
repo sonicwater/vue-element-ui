@@ -20,11 +20,19 @@ import Canvas_03 from './components/Canvas/Canvas_03.vue'
 import Canvas_04 from './components/Canvas/Canvas_04.vue'
 import Canvas_05 from './components/Canvas/Canvas_05.vue'
 
-import UserManagement from './components/UserManagement.vue'
+import TableData from './components/TableData/TableData.vue'
+import TableData_01 from './components/TableData/TableData_01.vue'
 
 export default{
-    //mode:'history', //发布到dist后出现路径错误
+    //mode:'history',
     routes:[
+        {
+            path:'/tableData', 
+            component:TableData,
+            children:[
+                {path:'/tableData_01', component:TableData_01},
+            ]
+        },
     	{
             path:'/echarts',
             component:Echarts,
@@ -63,7 +71,6 @@ export default{
                 {path:'/canvas_05', component:Canvas_05},
             ]
         },
-        {path:'/userManagement', component:UserManagement},
-        {path:'*', redirect:'/echart_01'}
+        {path:'*', redirect:'/tableData_01'}
     ]
 }
