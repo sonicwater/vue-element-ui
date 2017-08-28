@@ -4,14 +4,14 @@
 		<el-row>
 		  	<el-col :span="24">
 	  			<h2 class="h2">
-				    欢迎页面
-				    <small>欢迎页面副标题</small>
+				    Sonic Project
+				    <small>Vue + ElementUI with Webpack</small>
 			  	</h2>
 		  	</el-col>
 		</el-row>
 
-		<el-row :gutter="20">
-		  	<el-col :span="6">
+		<el-row :gutter="24">
+		  	<el-col :span="24">
 		  		<div class="grid-content">
 		  			<div class="info-box vue">
 		  				<span class="info-box-icon"></span>
@@ -27,7 +27,7 @@
 		  			
 		  		</div>
 		  	</el-col>
-		  	<el-col :span="6">
+		  	<el-col :span="24">
 		  		<div class="grid-content">
 		  			<div class="info-box element-ui">
 		  				<span class="info-box-icon"></span>
@@ -42,7 +42,7 @@
 		  			</div>
 		  		</div>
 		  	</el-col>
-		  	<el-col :span="6">
+		  	<el-col :span="24">
 		  		<div class="grid-content">
 		  			<div class="info-box webpack">
 		  				<span class="info-box-icon"></span>
@@ -57,7 +57,7 @@
 		  			</div>
 		  		</div>
 		  	</el-col>
-		  	<el-col :span="6">
+		  	<el-col :span="24">
 		  		<div class="grid-content">
 		  			
 		  		</div>
@@ -92,7 +92,7 @@ export default {
 	.info-box {
 	    display: block;
 	    background: #fff;
-	    width: 100%;
+	    width: 50%;
 	    box-shadow: 0 1px 1px rgba(0,0,0,.1);
 	    border-radius: 2px;
 	    margin-bottom: 15px;
