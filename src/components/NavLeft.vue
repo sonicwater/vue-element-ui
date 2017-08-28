@@ -57,11 +57,11 @@
                         	<i class="el-icon-document"></i>原生HTML5 canvas
                         </router-link></el-menu-item>
                 </el-menu-item-group>
-                <!--
-                <el-submenu index="1-5">
+                <!---->
+                <el-submenu index="3-5">
                     <template slot="title">框架</template>
-                    <el-menu-item index="1-5-1">three.js</el-menu-item>
-                </el-submenu>-->
+                    <el-menu-item index="3-5-1">three.js</el-menu-item>
+                </el-submenu>
             </el-submenu>
             
             <!--
@@ -98,11 +98,11 @@
 </script>
 <style>
 	aside.main-sidebar{
-	    position: fixed;
+	    position: absolute;
 	    top: 0;
 	    left: 0;
 	    padding-top: 0px;
-	    margin-top: 84px;
+	    margin-top: 0px;
 	    min-height: 100%;
 	    width: 230px;
 	    z-index: 810;

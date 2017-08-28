@@ -34,12 +34,13 @@
 </script>
 <style>
 	.NavHeaderBar{
+		/*
 		width:100%;
 		position: fixed;
 	    top: 0;
 	    left: 0;
 	    padding-top: 0px;
-	    z-index: 811;
+	    z-index: 811;*/
 	}
 	.grid-content.logoIcon{
 		padding-right: 10px;

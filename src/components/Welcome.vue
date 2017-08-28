@@ -11,7 +11,7 @@
 		</el-row>
 
 		<el-row :gutter="24">
-		  	<el-col :span="24">
+		  	<el-col :span="8">
 		  		<div class="grid-content">
 		  			<div class="info-box vue">
 		  				<span class="info-box-icon"></span>
@@ -27,7 +27,7 @@
 		  			
 		  		</div>
 		  	</el-col>
-		  	<el-col :span="24">
+		  	<el-col :span="8">
 		  		<div class="grid-content">
 		  			<div class="info-box element-ui">
 		  				<span class="info-box-icon"></span>
@@ -42,7 +42,7 @@
 		  			</div>
 		  		</div>
 		  	</el-col>
-		  	<el-col :span="24">
+		  	<el-col :span="8">
 		  		<div class="grid-content">
 		  			<div class="info-box webpack">
 		  				<span class="info-box-icon"></span>
@@ -55,11 +55,6 @@
 			                <span class="progress-description">^2.6.1</span>
 			  			</div>
 		  			</div>
-		  		</div>
-		  	</el-col>
-		  	<el-col :span="24">
-		  		<div class="grid-content">
-		  			
 		  		</div>
 		  	</el-col>
 		</el-row>
@@ -92,7 +87,7 @@ export default {
 	.info-box {
 	    display: block;
 	    background: #fff;
-	    width: 50%;
+	    width: 100%;
 	    box-shadow: 0 1px 1px rgba(0,0,0,.1);
 	    border-radius: 2px;
 	    margin-bottom: 15px;
