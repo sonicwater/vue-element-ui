@@ -1,38 +1,43 @@
 <template>
-    <el-col :span="4">
-        <el-menu default-active="1-1" class="el-menu-vertical-demo el-menu--dark" @open="handleOpen" @close="handleClose">
-        	<el-submenu index="1">
+    <aside class="main-sidebar">
+        <el-menu default-active="2-1" class="el-menu-vertical-demo el-menu--dark" @open="handleOpen" @close="handleClose">
+        	<el-menu-item index="1">
+                <router-link :to="{path:'Welcome'}">
+                	<i class="el-icon-menu"></i> 欢迎页面
+                </router-link>
+            </el-menu-item>
+        	<el-submenu index="2">
                 <template slot="title">
                     <i class="el-icon-message"></i>
                     数据展示
                 </template>
                 <el-menu-item-group>
                 	<template slot="title">表格</template>
-                	<el-menu-item index="1-1">
+                	<el-menu-item index="2-1">
                         <router-link :to="{path:'tableData_01'}">
                         	<i class="el-icon-document"></i>表格数据
                         </router-link>
                     </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
-            <el-submenu index="2">
+            <el-submenu index="3">
                 <template slot="title">
                     <i class="el-icon-message"></i>
                     数据可视化
                 </template>
                 <el-menu-item-group>
                     <template slot="title">图表</template>
-                    <el-menu-item index="2-1">
+                    <el-menu-item index="3-1">
                         <router-link :to="{path:'echart_01'}">
                         	<i class="el-icon-document"></i>echarts
                         </router-link>
                     </el-menu-item>
-                    <el-menu-item index="2-2">
+                    <el-menu-item index="3-2">
                         <router-link :to="{path:'highcharts_01'}">
                         	<i class="el-icon-document"></i>highcharts
                         </router-link>
                     </el-menu-item>
-                    <el-menu-item index="2-3">
+                    <el-menu-item index="3-3">
                         <router-link :to="{path:'D3_01'}">
                             <i class="el-icon-document"></i>D3
                             <svg width="72" height="12">
@@ -47,7 +52,7 @@
                     </el-menu-item>
                 </el-menu-item-group>
                 <el-menu-item-group title="绘图">
-                    <el-menu-item index="2-4">
+                    <el-menu-item index="3-4">
                         <router-link :to="{path:'Canvas_01'}">
                         	<i class="el-icon-document"></i>原生HTML5 canvas
                         </router-link></el-menu-item>
@@ -77,7 +82,7 @@
                 导航三
             </el-menu-item>-->
         </el-menu>
-    </el-col>
+    </aside>
 </template>
 <script>
   	export default{
@@ -92,6 +97,21 @@
   	}
 </script>
 <style>
+	aside.main-sidebar{
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    padding-top: 0px;
+	    margin-top: 84px;
+	    min-height: 100%;
+	    width: 230px;
+	    z-index: 810;
+	    transition: width .3s ease-in-out,-webkit-transform .3s ease-in-out;
+	    transition: transform .3s ease-in-out,width .3s ease-in-out;
+	    transition: transform .3s ease-in-out,width .3s ease-in-out,-webkit-transform .3s ease-in-out;
+	    display: block;
+	    background-color: #1f2d3d;
+	}
     .el-menu{
         border-radius: 0px;
     }

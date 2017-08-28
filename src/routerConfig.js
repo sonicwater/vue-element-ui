@@ -1,3 +1,5 @@
+import Welcome from './components/Welcome.vue'
+
 import Echarts from './components/Echarts/Echarts.vue'
 import Echart_01 from './components/Echarts/Echart_01.vue'
 import Echart_02 from './components/Echarts/Echart_02.vue'
@@ -26,6 +28,10 @@ import TableData_01 from './components/TableData/TableData_01.vue'
 export default{
     //mode:'history',
     routes:[
+    	{
+            path:'/Welcome', 
+            component:Welcome
+        },
         {
             path:'/tableData', 
             component:TableData,
@@ -71,6 +77,6 @@ export default{
                 {path:'/canvas_05', component:Canvas_05},
             ]
         },
-        {path:'*', redirect:'/tableData_01'}
+        {path:'*', redirect:'/Welcome'}
     ]
 }

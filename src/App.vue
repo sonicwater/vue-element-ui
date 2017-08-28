@@ -3,7 +3,7 @@
         <NavHeader></NavHeader>
         <el-row class="tac">
             <NavLeft></NavLeft>
-            <el-col :span="20" class="ContentRight">
+            <el-col :span="24" class="ContentRight">
                 <router-view></router-view>
             </el-col>
         </el-row>
@@ -33,6 +33,6 @@ export default {
         font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
     }
     .ContentRight{
-        padding:10px;
+        padding:10px;padding-left: 240px;margin-top: 84px;
     }
 </style>

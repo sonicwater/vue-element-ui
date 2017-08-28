@@ -1,21 +1,23 @@
 <template>
-	<el-row class="NavHeaderBar">
-  		<el-col :span="2">
-  			<div class="grid-content bg-purple logoIcon">
-  				<Logo/>
-  			</div>
-  		</el-col>
-  		<el-col :span="10">
-  			<div class="grid-content bg-purple logoText">
-  				<h1>Sonic Porject</h1>
-  			</div>
-  		</el-col>
-  		<el-col :span="12">
-  			<div class="grid-content bg-purple">
-  				&nbsp;
-  			</div>
-  		</el-col>
-	</el-row>
+	<header>
+		<el-row class="NavHeaderBar">
+	  		<el-col :span="2">
+	  			<div class="grid-content bg-purple logoIcon">
+	  				<Logo/>
+	  			</div>
+	  		</el-col>
+	  		<el-col :span="10">
+	  			<div class="grid-content bg-purple logoText">
+	  				<h1>Sonic Porject</h1>
+	  			</div>
+	  		</el-col>
+	  		<el-col :span="12">
+	  			<div class="grid-content bg-purple">
+	  				&nbsp;
+	  			</div>
+	  		</el-col>
+		</el-row>
+	</header>
 </template>
 <script>
 	import Logo from './Logo.vue';
@@ -31,6 +33,14 @@
 	}
 </script>
 <style>
+	.NavHeaderBar{
+		width:100%;
+		position: fixed;
+	    top: 0;
+	    left: 0;
+	    padding-top: 0px;
+	    z-index: 811;
+	}
 	.grid-content.logoIcon{
 		padding-right: 10px;
     	text-align: right;
