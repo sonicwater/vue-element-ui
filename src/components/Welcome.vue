@@ -4,14 +4,14 @@
 		<el-row>
 		  	<el-col :span="24">
 	  			<h2 class="h2">
-				    Sonic Project
-				    <small>Vue + ElementUI with Webpack</small>
+				    Vue Simple Page Project
+				    <small>Vue + ElementUI + Webpack</small>
 			  	</h2>
 		  	</el-col>
 		</el-row>
 
 		<el-row :gutter="24">
-		  	<el-col :span="24">
+		  	<el-col :span="8">
 		  		<div class="grid-content">
 		  			<div class="info-box vue">
 		  				<span class="info-box-icon"></span>
@@ -27,7 +27,7 @@
 		  			
 		  		</div>
 		  	</el-col>
-		  	<el-col :span="24">
+		  	<el-col :span="8">
 		  		<div class="grid-content">
 		  			<div class="info-box element-ui">
 		  				<span class="info-box-icon"></span>
@@ -42,7 +42,7 @@
 		  			</div>
 		  		</div>
 		  	</el-col>
-		  	<el-col :span="24">
+		  	<el-col :span="8">
 		  		<div class="grid-content">
 		  			<div class="info-box webpack">
 		  				<span class="info-box-icon"></span>
@@ -55,11 +55,6 @@
 			                <span class="progress-description">^2.6.1</span>
 			  			</div>
 		  			</div>
-		  		</div>
-		  	</el-col>
-		  	<el-col :span="24">
-		  		<div class="grid-content">
-		  			
 		  		</div>
 		  	</el-col>
 		</el-row>
@@ -86,16 +81,23 @@ export default {
 </script>
 
 <style scoped>
+	@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 	.h2{
 		font-size: 1.5em;color: #333;    margin: 10px;
+		font-family: 'Source Sans Pro', sans-serif;font-weight: 300;
+	}
+	.h2 small{
+		color:crimson;font-size: 14px;
+	}
+	.grid-content{
+		padding:10px;
 	}
 	.info-box {
 	    display: block;
 	    background: #fff;
-	    width: 50%;
+	    width: 100%;
 	    box-shadow: 0 1px 1px rgba(0,0,0,.1);
 	    border-radius: 2px;
-	    margin-bottom: 15px;
 	}
 	.info-box-content {
 	    padding: 5px 10px;
@@ -129,7 +131,7 @@ export default {
 	}
 	.info-box-number {
 	    display: block;
-	    font-weight: 700;
+	    font-weight: 300;
 	    font-size: 18px;
 	}
 	.info-box .progress, .info-box .progress .progress-bar {

@@ -1,20 +1,42 @@
 <template>
 	<header>
 		<el-row class="NavHeaderBar">
-	  		<el-col :span="2">
+	  		<el-col :span="6">
 	  			<div class="grid-content bg-purple logoIcon">
-	  				<Logo/>
-	  			</div>
-	  		</el-col>
-	  		<el-col :span="10">
-	  			<div class="grid-content bg-purple logoText">
-	  				<h1>Sonic Porject</h1>
+	  				<router-link :to="{path:'/home/Welcome'}">
+	                	<Logo/>
+	                </router-link>
 	  			</div>
 	  		</el-col>
 	  		<el-col :span="12">
 	  			<div class="grid-content bg-purple">
-	  				&nbsp;
+					    
 	  			</div>
+	  		</el-col>
+	  		<el-col :span="6" id="el-menu-login">
+
+					<el-menu 
+						:default-active="activeIndex0" 
+						class="el-menu-login" 
+						mode="horizontal" 
+						@select="handleSelect0"
+					>
+					  	<el-submenu index="1">
+					    	<template slot="title">
+					    		<img alt="@sonicwater" class="avatar" src="https://avatars0.githubusercontent.com/u/4988532?v=4&amp;s=40" height="20" width="20">
+					    		<span class="avatarText">
+					    			欢迎光临: 
+					    			{{username}}
+					    		</span>
+					    	</template>
+					    	<el-menu-item index="1-1" @click="signOut">
+					    		<i class="el-icon-information"></i> 登出
+					    	</el-menu-item>
+					  	</el-submenu>
+					</el-menu>	
+
+
+	  				
 	  		</el-col>
 		</el-row>
 	</header>
@@ -24,27 +46,32 @@
 	export default{
 		data () {
 	        return {
-	            
+        		activeIndex0: '1',
+	            username:window.localStorage.getItem('username')
 	        }
 	    },
 	    components:{
 	        Logo
+	    },
+	    methods: {
+	      	handleSelect0(key, keyPath) {
+	        	console.log(key, keyPath);
+	      	},
+	      	signOut(){
+	        	this.$router.push({path: '/'})
+	      	}
 	    }
 	}
 </script>
 <style>
-	.NavHeaderBar{
-		width:100%;
-		position: fixed;
-	    top: 0;
-	    left: 0;
-	    padding-top: 0px;
-	    z-index: 811;
+	.el-menu--horizontal .el-submenu__title:hover {
+    	background-color:#20A0FF;
 	}
-	.grid-content.logoIcon{
-		padding-right: 10px;
-    	text-align: right;
+	.el-menu--horizontal .el-submenu .el-submenu__icon-arrow{
+		color:#fff;
 	}
+</style>
+<style scoped>
 	.grid-content.logoText{
 		padding: 16px 0px;
 	}
@@ -60,27 +87,49 @@
 	    &:last-child {
 	      margin-bottom: 0;
 	    }
-	  }
-	  .el-col {
-	    border-radius: 4px;
-	  }
-	  .bg-purple-dark {
-	    background: #99a9bf;
-	  }
-	  .bg-purple {
-	    background: #1D8CE0;
-	  }
-	  .bg-purple-light {
-	    background: #e5e9f2;
-	  }
-	  .grid-content {
-    	padding: 16px 32px;
-	  }
-	  .row-bg {
-	    padding: 10px 0;
-	    background-color: #f9fafc;
-	  }
-	  .logo{
-	  	color: #fff; font-size: 24px;
-	  }
+  	}
+	.el-col {
+		border-radius: 4px;
+	}
+	.bg-purple-dark {
+		background: #99a9bf;
+	}
+	.bg-purple {
+		background: #1D8CE0;
+	}
+	.bg-purple-light {
+		background: #e5e9f2;
+	}
+	.grid-content {
+		padding: 10px 32px;
+	}
+	.row-bg {
+		padding: 10px 0;
+		background-color: #f9fafc;
+	}
+	.logo{
+		height: 38px;
+	}
+
+	.el-menu-login{
+		background:none;float: right;
+	}
+
+	.avatar {
+		display: inline-block;
+		overflow: hidden;
+		line-height: 1;
+		vertical-align: middle;
+		border-radius: 3px;
+		
+		margin-right: 5px;
+	}
+	.avatarText{
+		display: inline-block;
+		overflow: hidden;
+		line-height: 1;
+		vertical-align: middle;
+		color:#eee;
+	}
+
 </style>

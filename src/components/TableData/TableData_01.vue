@@ -5,7 +5,7 @@
 		    <el-table-column prop="date" label="日期" sortable width="180"></el-table-column>
 		    <el-table-column prop="name" label="姓名" sortable width="180"></el-table-column>
 		    <el-table-column prop="address" label="地址" :formatter="formatter"></el-table-column>
-	  	</el-table>
+	  	</el-table><p>静态数据分页——没什么意义</p>
 	  	<div class="block">
 		  	<el-pagination 
 		  		layout="prev, pager, next" 
@@ -16,7 +16,7 @@
 		  		@current-change='changePage' 
 		  	>
 		  	</el-pagination>
-		  	静态数据分页——没什么意义
+		  	
 		</div>
     </div>
   	
