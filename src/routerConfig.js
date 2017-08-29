@@ -1,3 +1,6 @@
+import Login from './components/Login.vue';
+import Home from './components/Home.vue';
+
 import Welcome from './components/Welcome.vue'
 
 import Echarts from './components/Echarts/Echarts.vue'
@@ -29,54 +32,65 @@ export default{
     //mode:'history',
     routes:[
     	{
-            path:'/Welcome', 
-            component:Welcome
-        },
-        {
-            path:'/tableData', 
-            component:TableData,
-            children:[
-                {path:'/tableData_01', component:TableData_01},
+	      	path: '/',
+	      	component: Login
+	    },
+	    {
+            path:'/home', 
+            component:Home,
+	      	children:[
+                {path:'/home/Welcome', component:Welcome},
+                {
+                	path:'/home/tableData',
+                	component:TableData, 
+                	children:[
+                		{path:'/home/tableData_01', component:TableData_01}
+                	]
+                },
+                {
+                	path:'/home/echarts',
+                	component:Echarts,
+                	children:[
+		                {path:'/home/echart_01', component:Echart_01},
+				        {path:'/home/echart_02', component:Echart_02},
+				        {path:'/home/echart_03', component:Echart_03},
+		            ]
+                },
+                {
+		            path:'/home/highcharts',
+		            component:Highcharts,
+		            children:[
+		                {path:'/home/highcharts_01', component:Highcharts_01},
+		                {path:'/home/highcharts_02', component:Highcharts_02},
+		                {path:'/home/highcharts_03', component:Highcharts_03},
+		            ]
+		        },
+		        {
+		            path:'/home/d3',
+		            component:D3,
+		            children:[
+		                {path:'/home/d3_01', component:D3_01},
+		                {path:'/home/d3_02', component:D3_02},
+		                {path:'/home/d3_03', component:D3_03},
+		            ]
+		        },
+		        {
+		            path:'/home/canvas',
+		            component:Canvas,
+		            children:[
+		                {path:'/home/canvas_01', component:Canvas_01},
+		                {path:'/home/canvas_02', component:Canvas_02},
+		                {path:'/home/canvas_03', component:Canvas_03},
+		                {path:'/home/canvas_04', component:Canvas_04},
+		                {path:'/home/canvas_05', component:Canvas_05},
+		            ]
+		        },
             ]
         },
-    	{
-            path:'/echarts',
-            component:Echarts,
-            children:[
-                {path:'/echart_01', component:Echart_01},
-		        {path:'/echart_02', component:Echart_02},
-		        {path:'/echart_03', component:Echart_03},
-            ]
-        },
-        {
-            path:'/highcharts',
-            component:Highcharts,
-            children:[
-                {path:'/highcharts_01', component:Highcharts_01},
-                {path:'/highcharts_02', component:Highcharts_02},
-                {path:'/highcharts_03', component:Highcharts_03},
-            ]
-        },
-        {
-            path:'/d3',
-            component:D3,
-            children:[
-                {path:'/d3_01', component:D3_01},
-                {path:'/d3_02', component:D3_02},
-                {path:'/d3_03', component:D3_03},
-            ]
-        },
-        {
-            path:'/canvas',
-            component:Canvas,
-            children:[
-                {path:'/canvas_01', component:Canvas_01},
-                {path:'/canvas_02', component:Canvas_02},
-                {path:'/canvas_03', component:Canvas_03},
-                {path:'/canvas_04', component:Canvas_04},
-                {path:'/canvas_05', component:Canvas_05},
-            ]
-        },
-        {path:'*', redirect:'/Welcome'}
+    	
+        
+        
+        
+        {path:'*', redirect:'/'}
     ]
 }
