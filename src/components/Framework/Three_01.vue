@@ -21,13 +21,13 @@
             function initRenderer() {
                 //width = document.getElementById('logo').clientWidth;
                 //height = document.getElementById('logo').clientHeight;
-                width = 48;
-                height = 48;
+                width = 200;
+                height = 200;
                 renderer = new THREE.WebGLRenderer({
                     canvas: document.getElementById('logo')
                 });
                 renderer.setSize(width, height);
-                renderer.setClearColor(0x1D8CE0, 1.0);
+                renderer.setClearColor(0xffffff, 1.0);
             }
              
             function initCamera() {
@@ -48,7 +48,7 @@
                 scene = new THREE.Scene();
             }
             function initObject() {
-                var geometry = new THREE.CubeGeometry(28, 28, 28);
+                var geometry = new THREE.CubeGeometry(100, 100, 100);
                 object = new THREE.Mesh(geometry, new THREE.MeshNormalMaterial());
                 scene.add(object);
             }

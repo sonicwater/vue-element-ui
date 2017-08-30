@@ -60,7 +60,11 @@
                 <!---->
                 <el-submenu index="3-5">
                     <template slot="title">框架</template>
-                    <el-menu-item index="3-5-1">three.js</el-menu-item>
+                    <el-menu-item index="3-5-1">
+                    	<router-link :to="{path:'/home/Three_01'}">
+                    		<i class="el-icon-document"></i>three.js
+                    	</router-link>
+                    </el-menu-item>
                 </el-submenu>
             </el-submenu>
             
