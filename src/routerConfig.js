@@ -25,6 +25,9 @@ import Canvas_03 from './components/Canvas/Canvas_03.vue'
 import Canvas_04 from './components/Canvas/Canvas_04.vue'
 import Canvas_05 from './components/Canvas/Canvas_05.vue'
 
+import Three from './components/Framework/Three.vue'
+import Three_01 from './components/Framework/Three_01.vue'
+
 import TableData from './components/TableData/TableData.vue'
 import TableData_01 from './components/TableData/TableData_01.vue'
 
@@ -85,6 +88,13 @@ export default{
 		                {path:'/home/canvas_05', component:Canvas_05},
 		            ]
 		        },
+		        {
+		            path:'/home/Three',
+		            component:Three,
+		            children:[
+		                {path:'/home/three_01', component:Three_01}
+		            ]
+		        }
             ]
         },
     	
