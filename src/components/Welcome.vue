@@ -59,24 +59,78 @@
 		  	</el-col>
 		</el-row>
 
+
+		<div class="vue-upload-img-multiple">
+		    <div v-if="images.length >0">
+		      	<ul>
+		        	<li v-for="image in images">
+		          		<img :src="image" @click='delImage($index)' />
+	          			<a href="#" style="position: absolute;" @click='delImage($index)'>
+	            			<span class="glyphicon glyphicon-remove"></span>
+	          			</a>
+		        	</li>
+		      	</ul>
+		      	<button @click="removeImage">移除全部图片</button>
+		      	<button @click='addPic' >上传</button>
+		    </div>
+
+		    <div>
+		      	<div v-if="!image">
+			        <h2>Select an image</h2>
+			        <input type="file" @change="onFileChange">
+		      	</div>
+		      	<div v-else>
+			        <img :src="image" />
+			        <button @click="removeImage">Remove image</button>
+		  		</div>
+			</div>
+
+		</div>
     </div>
 </template>
 
 <script>
 
 export default {
-    name: 'welcome',
-    data () {
-        return {
-
-        }
-    },
-    methods:{
-
-    },
-    components:{
-
+  name: 'Upload',
+  data: function () {
+    return {
+      images: []
     }
+  },
+  methods: {
+    test () {
+      var vm = this
+      console.log(vm.message)
+    },
+    addPic () {
+      $('input[type=file]').trigger('click')
+      return false
+    },
+    onFileChange (e) {
+      var files = e.target.files || e.dataTransfer.files
+      if (!files.length) return
+      this.createImage(files)
+    },
+    createImage (file) {
+      var vm = this
+      var reader = null
+      var leng = file.length
+      for (var i = 0; i < leng; i++) {
+        reader = new window.FileReader()
+        reader.readAsDataURL(file[i])
+        reader.onload = function (e) {
+          vm.images.push(e.target.result)
+        }
+      }
+    },
+    removeImage: function (e) {
+      this.images = []
+    },
+    delImage: function (index) {
+      this.images.shift(index)
+    }
+  }
 }
 </script>
 
@@ -190,4 +244,37 @@ export default {
 		background:url("https://camo.githubusercontent.com/d18f4a7a64244f703efcb322bf298dcb4ca38856/68747470733a2f2f7765627061636b2e6a732e6f72672f6173736574732f69636f6e2d7371756172652d6269672e737667") center center no-repeat;
 		background-size: 75% 75%;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #42b983;
+}
+.vue-upload-img-multiple{
+  border:1px red solid;
+}
 </style>
