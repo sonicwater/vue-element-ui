@@ -13,16 +13,7 @@
   		<li>骰子五：[<span id="s5"></span>]</li>
   		<li>骰子六：[<span id="s6"></span>]</li>
   	</ul>
-    <input id="throw" type="button" value="投掷" style="margin: 20px;width:100px;height:30px;" />
     <script>
-
-    	var throw1 = document.getElementById("throw");
-    	throw1.onclick = function(){
-    		throw1.value = "重投";
-    		doThrow();
-    	}
-
-    	function doThrow(){
     		var arr = []; 
 
 	    	for(var i=0;i<6;i++){
@@ -97,7 +88,6 @@
 	    	console.log(arr[3]);
 	    	console.log(arr[4]);
 	    	console.log(arr[5]);*/
-    	}
 
     	
     	
