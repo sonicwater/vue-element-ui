@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>vue-element-ui</title>
+  </head>
+  <body>
+  	<ul>
+  		<li>骰子一：[<span id="s1"></span>]</li>
+  		<li>骰子二：[<span id="s2"></span>]</li>
+  		<li>骰子三：[<span id="s3"></span>]</li>
+  		<li>骰子四：[<span id="s4"></span>]</li>
+  		<li>骰子五：[<span id="s5"></span>]</li>
+  		<li>骰子六：[<span id="s6"></span>]</li>
+  	</ul>
+    <input id="throw" type="button" value="投掷" style="margin: 20px;width:100px;height:30px;" />
+    <script>
+
+    	var throw1 = document.getElementById("throw");
+    	throw1.onclick = function(){
+    		throw1.value = "重投";
+    		doThrow();
+    	}
+
+    	function doThrow(){
+    		var arr = []; 
+
+	    	for(var i=0;i<6;i++){
+	    		arr[i] = new Array();
+	    		arr[i]=makeArray();
+	    		switch(i){
+					case 1:
+					  	if( arr[1].sort().toString() == arr[0].sort().toString() ){
+		    				arr[1]=makeArray();
+		    			}
+					  	break;
+					case 2:
+					  	if( arr[2].sort().toString()==arr[1].sort().toString() && 
+					  		arr[2].sort().toString()==arr[0].sort().toString() ){
+		    				arr[2]=makeArray();
+		    			}
+					  	break;
+					case 3:
+					  	if( arr[3].sort().toString()==arr[2].sort().toString() && 
+					  	 	arr[3].sort().toString()==arr[1].sort().toString() && 
+					  		arr[3].sort().toString()==arr[0].sort().toString() ){
+		    				arr[3]=makeArray();
+		    			}
+					  	break;
+					case 4:
+					  	if( arr[4].sort().toString()==arr[3].sort().toString() && 
+					  	 	arr[4].sort().toString()==arr[2].sort().toString() && 
+					  	 	arr[4].sort().toString()==arr[1].sort().toString() && 
+					  		arr[4].sort().toString()==arr[0].sort().toString() ){
+		    				arr[4]=makeArray();
+		    			}
+					  	break;
+					case 5:
+					  	if( arr[5].sort().toString()==arr[4].sort().toString() && 
+					  	 	arr[5].sort().toString()==arr[3].sort().toString() && 
+					  	 	arr[5].sort().toString()==arr[2].sort().toString() && 
+					  	 	arr[5].sort().toString()==arr[1].sort().toString() && 
+					  		arr[5].sort().toString()==arr[0].sort().toString() ){
+		    				arr[5]=makeArray();
+		    			}
+					  	break;
+				}
+	    		
+	    	}
+
+	    	function makeArray(){
+	    		var arr = new Array();
+	    		for(var i=0;i<6;i++){
+	    			arr[i]=Math.round(Math.random()*5 + 1);
+	    		}
+	    		return arr;
+	    	}
+
+	    	var s1 = document.getElementById("s1");
+	    	var s2 = document.getElementById("s2");
+	    	var s3 = document.getElementById("s3");
+	    	var s4 = document.getElementById("s4");
+	    	var s5 = document.getElementById("s5");
+	    	var s6 = document.getElementById("s6");
+
+	    	s1.innerHTML = arr[0];
+	    	s2.innerHTML = arr[1];
+	    	s3.innerHTML = arr[2];
+	    	s4.innerHTML = arr[3];
+	    	s5.innerHTML = arr[4];
+	    	s6.innerHTML = arr[5];
+
+	    	/*
+	    	console.log(arr[0] instanceof Array);
+	    	console.log(arr[1]);
+	    	console.log(arr[2]);
+	    	console.log(arr[3]);
+	    	console.log(arr[4]);
+	    	console.log(arr[5]);*/
+    	}
+
+    	
+    	
+
+    </script>
+  </body>
+</html>
